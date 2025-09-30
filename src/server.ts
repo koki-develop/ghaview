@@ -7,7 +7,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export async function startServer() {
   const isDev = process.env.NODE_ENV !== "production";
-  const rootDir = isDev ? path.resolve(__dirname, "..") : __dirname;
+  const rootDir = isDev
+    ? path.resolve(__dirname, "..")
+    : path.resolve(__dirname, "./web");
 
   // Start Vite server
   const server = await createServer({
