@@ -1,4 +1,4 @@
-import { Text, Title } from "@mantine/core";
+import { Alert, Center, Text, Title } from "@mantine/core";
 import { Background, MarkerType, Panel, ReactFlow } from "@xyflow/react";
 import { useParams } from "react-router";
 import { useWorkflow } from "../../lib/workflows";
@@ -11,7 +11,7 @@ const nodeTypes = {
 export default function WorkflowPage() {
   const params = useParams();
   const workflowFile = params.workflow as string;
-  const { data: workflow } = useWorkflow(workflowFile);
+  const { data: workflow, error } = useWorkflow(workflowFile);
 
   const { nodes, edges } = (() => {
     if (!workflow) return { nodes: [], edges: [] };
@@ -44,6 +44,18 @@ export default function WorkflowPage() {
 
     return { nodes, edges };
   })();
+
+  if (error) {
+    return (
+      <div className="h-dvh">
+        <Center className="h-full">
+          <Alert color="red" title="エラー" className="max-w-md">
+            {error.message}
+          </Alert>
+        </Center>
+      </div>
+    );
+  }
 
   return (
     <div className="h-dvh">

@@ -17,7 +17,7 @@ export default function JobNode(props: {
   return (
     <div>
       <button
-        className="cursor-pointer p-2 bg-white border rounded shadow"
+        className="cursor-pointer p-2 bg-white border border-gray-500 rounded shadow"
         type="button"
         onClick={open}
       >
