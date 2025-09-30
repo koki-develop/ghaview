@@ -9,6 +9,10 @@ export function createApp(): Hono {
 
   app.get("/api/workflows", async (c) => {
     const workflowsDir = path.join(process.cwd(), ".github/workflows");
+    if (!fs.existsSync(workflowsDir)) {
+      return c.json([]);
+    }
+
     const entries = fs.readdirSync(workflowsDir);
     const workflowFiles = entries.filter(
       (entry) => entry.endsWith(".yml") || entry.endsWith(".yaml"),
