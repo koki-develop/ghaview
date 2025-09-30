@@ -24,11 +24,11 @@ type StepBase = {
 };
 
 type RunStep = StepBase & {
-  run?: string;
+  run: string;
 };
 
 type UsesStep = StepBase & {
-  uses?: string;
+  uses: string;
   with?: Record<string, unknown>;
 };
 
