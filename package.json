@@ -41,6 +41,7 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-router": "7.9.3",
+    "shiki": "3.13.0",
     "tailwindcss": "4.1.13",
     "vite": "7.1.7",
     "yaml": "2.8.1"
