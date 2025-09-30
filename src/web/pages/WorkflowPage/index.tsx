@@ -49,8 +49,8 @@ export default function WorkflowPage() {
     return (
       <div className="h-dvh">
         <Center className="h-full">
-          <Alert color="red" title="エラー" className="max-w-md">
-            {error.message}
+          <Alert color="red" title="Error" className="max-w-md">
+            <span className="text-red-400">{error.message}</span>
           </Alert>
         </Center>
       </div>
