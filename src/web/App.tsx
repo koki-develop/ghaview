@@ -13,6 +13,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       gcTime: 0, // Disable garbage collection for queries
+      retry: false, // Disable retry on failure
     },
   },
 });
