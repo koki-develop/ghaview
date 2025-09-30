@@ -1,3 +1,7 @@
+import {
+  CodeHighlightAdapterProvider,
+  createShikiAdapter,
+} from "@mantine/code-highlight";
 import { MantineProvider } from "@mantine/core";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactFlowProvider } from "@xyflow/react";
@@ -34,14 +38,26 @@ const router = createBrowserRouter([
   },
 ]);
 
+const shikiAdapter = createShikiAdapter(async () => {
+  const { createHighlighter } = await import("shiki");
+  const shiki = await createHighlighter({
+    langs: ["shell", "python", "powershell", "cmd"],
+    themes: [],
+  });
+
+  return shiki;
+});
+
 export default function App() {
   return (
     <MantineProvider>
-      <ReactFlowProvider>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </ReactFlowProvider>
+      <CodeHighlightAdapterProvider adapter={shikiAdapter}>
+        <ReactFlowProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </ReactFlowProvider>
+      </CodeHighlightAdapterProvider>
     </MantineProvider>
   );
 }
