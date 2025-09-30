@@ -19,4 +19,3 @@ await $`chmod +x ./dist/index.js`;
 // Build React app
 await $`bunx vite build`;
 await $`mkdir -p dist/web`;
-await $`cp vite.config.ts dist/web/`;
