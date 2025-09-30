@@ -5,6 +5,7 @@
       "name": "ghaview",
       "dependencies": {
         "@hono/node-server": "1.19.5",
+        "@mantine/code-highlight": "8.3.2",
         "@mantine/core": "8.3.2",
         "@mantine/hooks": "8.3.2",
         "@tailwindcss/vite": "4.1.13",
@@ -173,6 +174,8 @@
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.5", "", {}, "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og=="],
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
+
+    "@mantine/code-highlight": ["@mantine/code-highlight@8.3.2", "", { "dependencies": { "clsx": "^2.1.1" }, "peerDependencies": { "@mantine/core": "8.3.2", "@mantine/hooks": "8.3.2", "react": "^18.x || ^19.x", "react-dom": "^18.x || ^19.x" } }, "sha512-0pQg4AMSTfnzjt78Wc7KQc1PBOKdReGPZPUYCmfRPRfPw8MHwHedQiZ3ziK+DC/ghADgs4odJyUsfXGd5JLjrA=="],
 
     "@mantine/core": ["@mantine/core@8.3.2", "", { "dependencies": { "@floating-ui/react": "^0.27.16", "clsx": "^2.1.1", "react-number-format": "^5.4.4", "react-remove-scroll": "^2.7.1", "react-textarea-autosize": "8.5.9", "type-fest": "^4.41.0" }, "peerDependencies": { "@mantine/hooks": "8.3.2", "react": "^18.x || ^19.x", "react-dom": "^18.x || ^19.x" } }, "sha512-uIHC9ooEZ9E+/pw8ag4f8pi0GmwSQ1DYnETjr4a4ZNVKJHfVv5NSkjprBxPrKJq9oox/SdcrAWy5XlKTwBzRag=="],
 
