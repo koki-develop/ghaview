@@ -13,6 +13,11 @@ export type Job = {
   needs?: string | string[];
   steps?: Step[];
   permissions?: Permissions;
+  "runs-on"?: string | string[];
+  "timeout-minutes"?: number;
+  environment?: string | { name: string; url?: string };
+  concurrency?: { group: string; "cancel-in-progress"?: boolean };
+  outputs?: Record<string, string>;
 };
 
 export type Permissions = Record<string, "read" | "write" | "none">;
