@@ -11,6 +11,7 @@
         "@tanstack/react-query": "5.90.2",
         "@vitejs/plugin-react": "5.0.4",
         "@xyflow/react": "12.8.6",
+        "clsx": "2.1.1",
         "commander": "14.0.0",
         "hono": "4.9.9",
         "open": "10.2.0",
