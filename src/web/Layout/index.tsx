@@ -9,16 +9,14 @@ export default function Layout() {
 
   return (
     <div className="flex max-h-dvh">
-      <div className="overflow-y-auto flex flex-col w-56 border-r border-gray-200">
+      <div className="overflow-y-auto min-h-dvh flex flex-col w-56 border-r border-gray-200">
         {workflowFiles?.map((workflowFile) => (
           <Link
             key={workflowFile.filename}
             to={`/workflows/${workflowFile.filename}`}
             className={clsx(
               "text-base py-2 px-4 text-black no-underline border-b border-gray-200",
-              {
-                "bg-gray-200 font-bold": workflowFile.filename === workflow,
-              },
+              { "bg-gray-200 font-bold": workflowFile.filename === workflow },
             )}
           >
             <Text lineClamp={1} className="text-base">
@@ -29,6 +27,10 @@ export default function Layout() {
             </Text>
           </Link>
         ))}
+
+        {workflowFiles?.length === 0 && (
+          <div className="p-4 text-sm text-gray-500">No workflows found.</div>
+        )}
       </div>
 
       <div className="grow">
