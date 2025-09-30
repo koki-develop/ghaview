@@ -5,12 +5,12 @@ export type WorkflowFile = {
 
 export type Workflow = {
   name?: string;
-  needs?: string[];
   jobs: Record<string, Job>;
 };
 
 export type Job = {
   name?: string;
+  needs?: string | string[];
   steps?: Step[];
   permissions?: Permissions;
 };
