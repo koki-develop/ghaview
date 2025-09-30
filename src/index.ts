@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import packageJson from "../package.json" with { type: "json" };
-import { startServer } from "./server.ts";
+import { startServer } from "./server";
 
 const program = new Command();
 
