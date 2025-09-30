@@ -1,55 +1,8 @@
 import { Text, Title } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import {
-  Background,
-  Handle,
-  MarkerType,
-  Panel,
-  Position,
-  ReactFlow,
-} from "@xyflow/react";
+import { Background, MarkerType, Panel, ReactFlow } from "@xyflow/react";
 import { useParams } from "react-router";
-import type { Job } from "../../../lib/types";
 import { useWorkflow } from "../../lib/workflows";
-import JobDrawer from "./JobDrawer";
-
-function JobNode(props: {
-  data: {
-    jobId: string;
-    job: Job;
-    hasSourceHandle: boolean;
-    hasTargetHandle: boolean;
-  };
-}) {
-  console.log({ props });
-  const { jobId, job, hasSourceHandle, hasTargetHandle } = props.data;
-  const [opened, { open, close }] = useDisclosure(false);
-
-  return (
-    <div>
-      <button
-        className="cursor-pointer p-2 bg-white border rounded shadow"
-        type="button"
-        onClick={open}
-      >
-        {job.name ?? jobId}
-      </button>
-
-      <JobDrawer open={opened} onClose={close} jobId={jobId} job={job} />
-
-      {hasSourceHandle && (
-        <Handle
-          className="invisible"
-          type="source"
-          position={Position.Bottom}
-        />
-      )}
-      {hasTargetHandle && (
-        <Handle className="invisible" type="target" position={Position.Top} />
-      )}
-    </div>
-  );
-}
+import JobNode from "./JobNode";
 
 const nodeTypes = {
   job: JobNode,
