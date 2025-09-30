@@ -1,4 +1,5 @@
-import { Accordion, Code, Text } from "@mantine/core";
+import { CodeHighlight } from "@mantine/code-highlight";
+import { Accordion, Text } from "@mantine/core";
 import type { Job } from "../../../lib/types";
 import { KeyValueTable } from "./KeyValueTable";
 
@@ -21,7 +22,10 @@ export default function JobStepsAccordion({ job }: JobStepsAccordionProps) {
             )}
           </Accordion.Control>
           <Accordion.Panel>
-            {"run" in step && <Code block>{step.run}</Code>}
+            {"run" in step && (
+              // TODO: Change language depending on shell input
+              <CodeHighlight language="shell" code={step.run} />
+            )}
             {"uses" in step && (
               <>
                 {step.with && (
