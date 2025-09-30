@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "prepare": "husky",
+    "dev": "vite",
     "fmt": "biome check --write --unsafe .",
     "lint": "biome check .",
     "typecheck": "tsc --noEmit",

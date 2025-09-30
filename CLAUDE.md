@@ -54,7 +54,7 @@ Pre-commit hooks automatically run `bunx lint-staged` which formats staged files
 
 ### Development Server
 ```bash
-bunx vite
+bun run dev
 ```
 Runs development server on port 3000 with:
 - Vite for React hot reloading
